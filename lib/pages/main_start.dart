@@ -16,42 +16,42 @@ class _homeState extends State<home> {
     super.initState();
     datas = [
       {
-        'images':'assets/image/1.jpg',
+        'images':'assets/images/ara-1.jpg',
         'title' :'네메시스 축구화',
         'location' : '제주 제주시 아라읍',
         'price': '20,000원',
         'likes' : '2',
       },
       {
-        'images':'assets/image/2.jpg',
+        'images':'assets/images/ara-2.jpg',
         'title' :'뭘까',
         'location' : '제주 제주시 아라읍',
         'price': '20,000원',
         'likes' : '2',
       },
       {
-        'images':'assets/image/2.jpg',
+        'images':'assets/images/ara-3.jpg',
         'title' :'뭘까',
         'location' : '제주 제주시 아라읍',
         'price': '20,000원',
         'likes' : '2',
       },
       {
-        'images':'assets/image/2.jpg',
+        'images':'assets/images/ara-4.jpg',
         'title' :'뭘까',
         'location' : '제주 제주시 아라읍',
         'price': '20,000원',
         'likes' : '2',
       },
       {
-        'images':'assets/image/2.jpg',
+        'images':'assets/images/ara-5.jpg',
         'title' :'뭘까',
         'location' : '제주 제주시 아라읍',
         'price': '20,000원',
         'likes' : '2',
       },
       {
-        'images':'assets/image/2.jpg',
+        'images':'assets/images/ara-6.jpg',
         'title' :'뭘까',
         'location' : '제주 제주시 아라읍',
         'price': '20,000원',
@@ -97,15 +97,20 @@ class _homeState extends State<home> {
   Widget _bodyWidget() {
     return ListView.separated(
         itemBuilder: (BuildContext _context, int index){
-          return Container(
-            child: Text(index.toString()),
-          );
+          if (datas.isNotEmpty && index < datas.length) {
+            return Container(
+              child: Row(
+                children: [Image.asset(datas[index]['images']!)],
+              ),
+            );
+          }
         },
         separatorBuilder: (BuildContext _context, int index){
-          return Container( height: 1, color: Colors.black,
+          return Container( height: 1, color: Color(0xff999999),
           );
         },
-        itemCount: itemCount)
+        itemCount: 19
+    );
   }
 
   @override
@@ -113,7 +118,6 @@ class _homeState extends State<home> {
     return Scaffold(
       appBar: _appbarWidget(),
       body: _bodyWidget(),
-      bottomNavigationBar: Container(),
     );
   }
 }
