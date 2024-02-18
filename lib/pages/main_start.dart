@@ -85,6 +85,13 @@ class _homeState extends State<home> {
         "location": "제주 제주시 아라동",
         "price": "50000",
         "likes": "7"
+      },
+      {
+        "image": "assets/images/ara-6.jpg",
+        "title": "갤럭시s10",
+        "location": "제주 제주시 아라동",
+        "price": "180000",
+        "likes": "2"
       }
     ];
   }
